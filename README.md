@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+Full Stack Sales Dashboard
+Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Full-Stack Sales Dashboard designed for internal business monitoring. It provides a high-level overview of sales and lead performance, allowing visualization of key metrics, sales trends, and lead status distribution.
 
-## Available Scripts
+This assignment demonstrates proficiency in:
 
-In the project directory, you can run:
+Frontend development (React/HTML/CSS/JS)
 
-### `npm start`
+Backend API development (Node.js/Express or Flask)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Data aggregation and API integration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Basic data visualization using charts
 
-### `npm test`
+Clean and responsive UI design
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Features
+1. KPI Summary
 
-### `npm run build`
+Total Leads
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Contacted Leads
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Sales Closed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Total Revenue
 
-### `npm run eject`
+Each KPI displays a numeric value and descriptive label.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Lead Status Summary
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Table displaying lead statuses:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+New
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contacted
 
-## Learn More
+Follow Up
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Appointment Booked
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Converted
 
-### Code Splitting
+Lost
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Shows count per status
 
-### Analyzing the Bundle Size
+3. Charts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Sales Trend: Line chart representing revenue over time (min 7 days of data)
 
-### Making a Progressive Web App
+Lead Status Distribution: Pie/donut chart showing percentages of all lead statuses with hover tooltips
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Date Range Filter
 
-### Advanced Configuration
+Dropdown filter options:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Last 7 Days
 
-### Deployment
+Last 30 Days
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Backend
 
-### `npm run build` fails to minify
+Stores lead and sales data (dummy data included)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Provides REST API endpoints for the frontend
+
+Aggregates data for KPI and charts
+
+Returns structured JSON responses
+
+Example Endpoints:
+
+GET /api/kpis – Returns total leads, contacted leads, sales closed, total revenue
+
+GET /api/lead-status – Returns count of leads by status
+
+GET /api/sales-trend?range=7 – Returns revenue data for the selected date range
+
+Frontend
+
+Built using React (or plain HTML/CSS/JS if applicable)
+
+Consumes backend APIs and renders data dynamically
+
+Responsive layout for 1366 × 768 resolution
+
+Loading indicators while fetching data
+
+Empty state messages for missing data
+
+Data
+
+Dummy data simulates realistic business scenarios
+
+Includes multiple lead statuses and sales records to generate visible trends
+
+Setup Instructions
+Prerequisites
+
+Node.js (v18+ recommended)
+
+npm or yarn
+
+Steps
+
+Clone the repository:
+
+git clone https://github.com/your-username/fullstack-sales-dashboard.git
+cd fullstack-sales-dashboard
+
+
+Install dependencies for backend:
+
+cd backend
+npm install
+
+
+Run the backend server:
+
+npm start
+
+
+Install dependencies for frontend:
+
+cd ../frontend
+npm install
+
+
+Run the frontend:
+
+npm start
+
+
+Open the browser at http://localhost:3000 to view the dashboard
+
+Architecture & Design Decisions
+
+Frontend-Backend Separation: APIs serve as a clear boundary for data handling
+
+Data Aggregation: Backend aggregates KPIs and chart data for simplicity and clarity
+
+Chart Library: Used Chart.js / Recharts for easy visualization
+
+Responsive UI: Flexbox and CSS Grid used to maintain structure and readability
+
+Dummy Data Generation: Simulated realistic leads and sales for testing
